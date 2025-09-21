@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .back {
+            position: fixed;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffefdb; /* Color de fondo suave */
+            animation-name: backdiv;
+            animation-duration: 3500ms;
+            animation-iteration-count: infinite;
+            height: 100vh;
+            overflow: hidden; /* Para ocultar burbujas fuera del área visible */
+        }
+
+        .heart {
+            position: absolute;
+            margin: auto;
+            top: 170px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #ff6b6b; /* Color del corazón */
+            height: 150px;
+            width: 150px;
+            transform: rotate(-45deg);
+            animation-name: beat;
+            animation-duration: 3500ms;
+            animation-iteration-count: infinite;
+        }
+
+        .heart:after, .heart:before {
+            background-color: #ff6b6b; /* Color del corazón */
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            width: 150px;
+            height: 150px;
+        }
+
+        .heart:after {
+            top: 0;
+            left: 80px;
+        }
+
+        .heart:before {
+            top: -80px;
+            left: 0;
+        }
+
+        @keyframes backdiv {
+            50% {
+                background: #fce0c1; /* Color de fondo alternativo */
+            }
+        }
+
+        @keyframes beat {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(0.6) rotate(-45deg);
+            }
+        }
+
+        .bday {
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    font-size: 18px; /* tamaño base */
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    color: #4a2c2c;
+    margin: 20px auto;
+    padding: 15px 20px;
+    background-color: #ffe1b0;
+    max-width: 800px; /* limita el ancho en PC */
+    line-height: 1.6;
+    border-radius: 10px;
+}
+
+/* Responsive para celular */
+@media (max-width: 600px) {
+    .bday {
+        font-size: 20px;   /* más grande en móvil */
+        padding: 18px 16px;
+        margin: 12px;
+        line-height: 1.5;
+        border-radius: 12px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+
+    .heart {
+        height: 120px;
+        width: 120px;
+    }
+
+    .heart:after, .heart:before {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
+        button {
+            background-color: #ff6b6b; /* Color del botón */
+            display: block; 
+            margin: 20px auto; 
+            padding: 10px 20px; 
+            color: white; 
+            border: none;
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s ease; /* Transición suave */
+        }
+
+        button:hover {
+            background-color: #ff4c4c; /* Color del botón al pasar el mouse */
+        }
+
+        a {
+            color: white; /* Color del texto del enlace */
+            text-decoration: none;
+        }
+
+        .elements {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            pointer-events: none; /* Para que no interfiera con el clic */
+            opacity: 0;
+            animation: rise 1s forwards;
+        }
+
+        @keyframes rise {
+            0% {
+                bottom: 0;
+                opacity: 1;
+                transform: scale(0.5);
+            }
+            100% {
+                bottom: 100px; /* Altura final */
+                opacity: 0;
+                transform: scale(1);
+            }
+        }
+
+        /* Animación para la burbuja al hacer click */
+        /* burbujas */
+
+.burbuja{
+    border-radius: 50%;
+    background: #fff;
+    opacity: .3;
+
+    position: absolute;
+    bottom: -150;
+    
+    animation: burbujas 3s linear infinite ;
+}
+
+.burbuja:nth-child(1){
+    width: 80px;
+    height: 80px;
+    left: 5%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+
+.burbuja:nth-child(2){
+    width: 100px;
+    height: 100px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(3){
+    width: 20px;
+    height: 20px;
+    left: 15%;
+    animation-duration: 1.5s;
+    animation-delay: 7s;
+}
+
+.burbuja:nth-child(4){
+    width: 50px;
+    height: 50px;
+    left: 90%;
+    animation-duration: 6s;
+    animation-delay: 3s;
+}
+
+.burbuja:nth-child(5){
+    width: 70px;
+    height: 70px;
+    left: 65%;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+.burbuja:nth-child(6){
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(7){
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(8){
+    width: 100;
+    height: 100px;
+    left: 52%;
+    animation-duration: 5s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(9){
+    width: 65px;
+    height: 65px;
+    left: 51%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+.burbuja:nth-child(10){
+    width: 40px;
+    height: 40px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 4s;
+}
+
+
+@keyframes burbujas{
+    0%{
+        bottom: 0;
+        opacity: 0;
+    }
+    30%{
+        transform: translateX(30px);
+    }
+    50%{
+        opacity: .4;
+    }
+    100%{
+        bottom: 100vh;
+        opacity: 0;
+    }
+}
+
+@keyframes movimiento{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+/* Fuentes */
+/* Estilo normal (PC) */
+#text {
+  font-size: 28px;
+}
+
+/* En pantallas pequeñas (celulares) */
+@media (max-width: 600px) {
+  #text {
+    font-size: 18px;
+    bottom: 20px; /* más arriba */
+  }
+
+  #frase {
+    font-size: 20px;
+    top: 10px;
+    text-align: center;
+    width: 90%;
+  }
+
+  .sunflower {
+    transform: scale(0.8); /* hacer más pequeña la flor */
+  }
+}
+
+ /* Responsive */
+    @media (max-width: 600px) {
+      #frase { font-size: 20px; top: 10px; width: 90%; }
+      #text { font-size: 16px; bottom: 20px; }
+      .sunflower { transform: translateX(-50%) scale(0.8); top: 100px; }
+      #playButton { padding: 10px; font-size: 16px; }
+    }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <title>Flores Amarillas</title>
+</head>
+<body>
+    
+    <div class="back">
+        <div class="bday">Buenos Días Melanie :3<br>Te envío este Girasol como un pequeño gesto para iluminar tu noche y recordarte lo especial que eres.<br> Espero que tengas sueños llenos de paz y felicidad. ¡Hoy será un día maravilloso!</div>
+        
+        <div class="elements">
+            <div class="heart"></div>
+            <footer>
+                <div class="boton">
+                    <button id="bubbleButton"><span>Haz clic aquí</span></button>
+                </div>
+            </footer>
+        </div>
+       
+    </div>
+    <div class="burbujas">
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+    </div>
+    <script>
+        const button = document.getElementById('bubbleButton');
+
+        button.addEventListener('click', function(e) {
+            // Crear la burbuja
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            const size = Math.random() * 50 + 20; // Tamaño aleatorio entre 20 y 70
+            bubble.style.width = size + 'px';
+            bubble.style.height = size + 'px';
+            bubble.style.left = e.clientX - (size / 2) + 'px'; // Centrar burbuja en clic
+            document.body.appendChild(bubble);
+
+            // Eliminar burbuja después de la animación
+            bubble.addEventListener('animationend', function() {
+                bubble.remove();
+            });
+
+            // Redirigir a otra página después de un pequeño retraso para ver el efecto
+            setTimeout(() => {
+                window.location.href = 'index2.html'; // Cambia a la URL deseada
+            }, 200); // Ajusta el tiempo si es necesario
+        });
+    </script>
+</body>
+</html>
+

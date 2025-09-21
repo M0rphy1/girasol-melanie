@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flor Amarilla</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, #001f33, #00c3ff);
+      overflow-x: hidden;
+    }
+
+    /* Texto superior */
+    #frase {
+      margin-top: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      background: linear-gradient(90deg, #ffeb3b, #ff9800, #ffcc00, #ffe57f);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fraseGlow 4s ease-in-out infinite alternate,
+                 gradientMove 6s linear infinite;
+    }
+    @keyframes fraseGlow {
+      from { text-shadow: 0 0 8px #fff59d, 0 0 15px #fbc02d; }
+      to   { text-shadow: 0 0 20px #fdd835, 0 0 40px #ffeb3b; }
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Flor centrada */
+    .sunflower {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: bounceIn 2s ease forwards, sway 5s ease-in-out infinite alternate;
+    }
+    @keyframes bounceIn {
+      0% { transform: translateY(200px) scale(0.8); opacity: 0; }
+      60% { transform: translateY(-20px) scale(1.05); opacity: 1; }
+      100% { transform: translateY(0) scale(1); }
+    }
+    @keyframes sway {
+      0% { transform: rotate(-3deg); }
+      100% { transform: rotate(3deg); }
+    }
+
+    /* Texto inferior con efecto máquina de escribir */
+    #text {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;         /* siempre centrado */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #fff176;
+    border-right: 2px solid #ffeb3b; /* cursor parpadeante */
+    white-space: normal;        /* permite saltos de línea */
+    word-wrap: break-word;      /* ajusta palabras largas */
+    overflow: hidden;
+    margin-bottom: 20px;
+    max-width: 90%;             /* no se pasa del ancho */
+    animation: glow 2s ease-in-out infinite alternate,
+               blink 0.8s step-end infinite;
+  }
+
+    /* cursor parpadeante */
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #ffeb3b; }
+    }
+
+    /* brillo */
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #fff176, 0 0 10px #ffd54f, 0 0 20px #ffeb3b; }
+      to   { text-shadow: 0 0 20px #ffeb3b, 0 0 40px #ffc107, 0 0 60px #ff9800; }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      #frase { font-size: 40px; margin-top: 10px; }
+      #text { font-size: 16px; margin-bottom: 10px; }
+      .sunflower { transform: scale(0.8); }
+    }
+  </style>
+</head>
+<body onclick="PlayAudio()">
+
+  <audio id="musica1" autoplay>
+    <source src="Flores Amarillas2.mp3" type="audio/mpeg">
+    <source src="Flores Amarillas2.ogv" type="audio/ogg">
+  </audio>
+
+  <!-- Texto arriba -->
+  <h1 id="frase">Amarillo como el sol, brillante como tu amistad.</h1>
+
+  <!-- Flor -->
+  <div class="sunflower">
+    <div class="flower_wrapper">
+      <div class="flower_stem"></div>
+      <div class="flower_center"></div>
+      <div class="flower_petal flower_petal-1"></div>
+      <div class="flower_petal flower_petal-2"></div>
+      <div class="flower_petal flower_petal-3"></div>
+      <div class="flower_petal flower_petal-4"></div>
+      <div class="flower_petal flower_petal-5"></div>
+      <div class="flower_petal flower_petal-6"></div>
+      <div class="flower_petal flower_petal-7"></div>
+      <div class="flower_petal flower_petal-8"></div>
+      <div class="flower_petal flower_petal-9"></div>
+      <div class="flower_petal flower_petal-10"></div>
+      <div class="flower_petal flower_petal-11"></div>
+      <div class="flower_petal flower_petal-12"></div>
+      <div class="flower_leaf flower_leaf-1"></div>
+      <div class="flower_leaf flower_leaf-2"></div>
+
+      <div class="flower_light flower_light-1"></div>
+            <div class="flower_light flower_light-2"></div>
+            <div class="flower_light flower_light-3"></div>
+            <div class="flower_light flower_light-4"></div>
+            <div class="flower_light flower_light-5"></div>
+            <div class="flower_light flower_light-6"></div>
+            <div class="flower_light flower_light-7"></div>
+            <div class="flower_light flower_light-8"></div>
+    </div>
+  </div>
+<div class="light light-1"></div>
+    <div class="light light-2"></div>
+    <div class="light light-3"></div>
+    <div class="light light-4"></div>
+    <div class="light light-5"></div>
+    <div class="light light-6"></div>
+    <div class="light light-7"></div>
+    <div class="light light-8"></div>
+    <div class="light light-9"></div>
+    <div class="light light-10"></div>
+    <div class="light light-11"></div>
+    <div class="light light-12"></div>
+    <div class="burbujas">
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+    </div>
+  <!-- Texto abajo -->
+  <p id="text"></p>
+
+  <script>
+    function PlayAudio() {
+      document.getElementById("musica1").play();
+    }
+
+    // Frases en bucle
+    const frases = [
+      "CON MUCHO CARIÑO PARA TI.... ʕ•́ᴥ•̀ʔっ (✿◠‿◠)",
+      "Que tengas un día tan brillante como esta flor 🌻",
+      "Eres una persona muy especial ✨"
+    ];
+
+    const textElement = document.getElementById("text");
+    let fraseIndex = 0;
+    let charIndex = 0;
+    let borrando = false;
+
+    function typeEffect() {
+      const fraseActual = frases[fraseIndex];
+
+      if (!borrando) {
+        textElement.textContent = fraseActual.substring(0, charIndex++);
+        if (charIndex > fraseActual.length) {
+          borrando = true;
+          setTimeout(typeEffect, 2000); // pausa al terminar de escribir
+          return;
+        }
+      } else {
+        textElement.textContent = fraseActual.substring(0, charIndex--);
+        if (charIndex < 0) {
+          borrando = false;
+          fraseIndex = (fraseIndex + 1) % frases.length;
+          charIndex = 0;
+        }
+      }
+      setTimeout(typeEffect, borrando ? 50 : 100);
+    }
+
+    typeEffect();
+  </script>
+</body>
+</html>
